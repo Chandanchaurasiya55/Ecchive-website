@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECC Hive â€“ Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-blue: #003a5d;
+      --accent-orange: #ff7900;
+      --bg-white: #ffffff;
+      --bg-light: #f4f5f8;
+      --text-main: #333333;
+      --text-muted: #555555;
+      --border-color: #e0e0e0;
+      --font-main: 'Montserrat', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-main); background: var(--bg-white); color: var(--text-main); line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg-white); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .logo { font-weight: 800; font-size: 1.8rem; color: var(--primary-blue); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .logo span { color: var(--accent-orange); }
+    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; margin:0; padding:0; }
+    .nav-links li { display:inline-block; }
+    .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color 0.2s; letter-spacing:0.5px;}
+    .nav-links a:hover { color: var(--accent-orange); }
+    .nav-cta.rounded-pill { background: var(--accent-orange); color: var(--bg-white) !important; padding: 0.6rem 1.4rem; border-radius: 50px; text-transform:uppercase; transition: background 0.3s; }
+    .nav-cta.rounded-pill:hover { background: #e66a00; }
+    .nav-login { display:flex; align-items:center; gap:0.4rem; color: var(--accent-orange) !important; text-transform:uppercase; font-size: 0.85rem; font-weight:bold; text-decoration:none; }
+    footer { background: var(--primary-blue); color: var(--bg-white); text-align: center; padding: 3rem 5vw; margin-top: 5rem; }
+    .page-hero { background: linear-gradient(135deg, var(--bg-light) 0%, #eef2f5 100%); padding: 6rem 5vw 4rem; text-align: center; }
+    .page-hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--primary-blue); margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    .content-section { padding: 4rem 5vw; max-width: 1000px; margin: 0 auto; min-height: 40vh; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top:2rem;}
+    .content-card { background: var(--bg-white); border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); text-align:left;}
+    .content-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.4rem;}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo" style="gap: 0.8rem;">
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="var(--accent-orange)" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+      <text x="12" y="15" fill="#ffffff" font-size="7" font-weight="900" font-family="Montserrat, sans-serif" text-anchor="middle" letter-spacing="1">ECC</text>
+    </svg>
+    <div style="display:flex; flex-direction:column; line-height: 1.1;">
+      <span style="color:#003a5d; font-weight:900; font-size:1.5rem; letter-spacing: 1px;">ECC</span>
+      <span style="color:var(--accent-orange); font-weight:400; font-size:1.15rem; text-transform:none;">hive</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="solutions.html">SOLUTIONS</a></li>
+    <li><a href="partner.html">PARTNER WITH US</a></li>
+    <li><a href="institutions.html">INSTITUTIONS</a></li>
+    <li><a href="news.html">IN THE NEWS &#9662;</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="get-started.html" class="nav-cta rounded-pill">GET STARTED</a></li>
+    <li><a href="login.html" class="nav-login"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login</a></li>
+  </ul>
+</nav>
+  <header class="page-hero">
+    <h1>Welcome Back</h1>
+    <p>Access your ECC Hive portal.</p>
+  </header>
+  
+  <section class="content-section">
+    <div class='content-card' style='max-width:400px; margin: 0 auto; text-align:center;'><form style='display:flex; flex-direction:column; gap:1rem; text-align:left;'><div style='display:flex; flex-direction:column; gap:0.5rem;'><label style='font-weight:600; color:var(--primary-blue);'>Email</label><input type='email' placeholder='name@example.com' style='padding:0.8rem; border:1px solid #ccc; border-radius:4px;'></div><div style='display:flex; flex-direction:column; gap:0.5rem;'><label style='font-weight:600; color:var(--primary-blue);'>Password</label><input type='password' placeholder='â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢' style='padding:0.8rem; border:1px solid #ccc; border-radius:4px;'></div><button type='button' style='background:var(--primary-blue); color:#fff; border:none; padding:1rem; border-radius:4px; font-weight:bold; cursor:pointer; font-size:1rem; transition:background 0.3s;' onmouseover="this.style.background='#002d4a'" onmouseout="this.style.background='var(--primary-blue)'">Login to Dashboard</button></form><p style='margin-top:1.5rem; font-size:0.9rem;'>Forgot Password? <a href='#' style='color:var(--accent-orange); text-decoration:none; font-weight:bold;'>Click here</a></p></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ECC Hive. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
