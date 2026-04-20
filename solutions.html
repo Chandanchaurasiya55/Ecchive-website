@@ -3,76 +3,436 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECC Hive â€“ Solutions</title>
+  <title>ECC Hive – Solutions</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary-blue: #003a5d;
-      --accent-orange: #ff7900;
-      --bg-white: #ffffff;
-      --bg-light: #f4f5f8;
-      --text-main: #333333;
-      --text-muted: #555555;
-      --border-color: #e0e0e0;
-      --font-main: 'Montserrat', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-main); background: var(--bg-white); color: var(--text-main); line-height: 1.6; }
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg-white); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .logo { font-weight: 800; font-size: 1.8rem; color: var(--primary-blue); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-    .logo span { color: var(--accent-orange); }
-    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; margin:0; padding:0; }
-    .nav-links li { display:inline-block; }
-    .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color 0.2s; letter-spacing:0.5px;}
-    .nav-links a:hover { color: var(--accent-orange); }
-    .nav-cta.rounded-pill { background: var(--accent-orange); color: var(--bg-white) !important; padding: 0.6rem 1.4rem; border-radius: 50px; text-transform:uppercase; transition: background 0.3s; }
-    .nav-cta.rounded-pill:hover { background: #e66a00; }
-    .nav-login { display:flex; align-items:center; gap:0.4rem; color: var(--accent-orange) !important; text-transform:uppercase; font-size: 0.85rem; font-weight:bold; text-decoration:none; }
-    footer { background: var(--primary-blue); color: var(--bg-white); text-align: center; padding: 3rem 5vw; margin-top: 5rem; }
-    .page-hero { background: linear-gradient(135deg, var(--bg-light) 0%, #eef2f5 100%); padding: 6rem 5vw 4rem; text-align: center; }
-    .page-hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--primary-blue); margin-bottom: 1rem; }
-    .page-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
-    .content-section { padding: 4rem 5vw; max-width: 1000px; margin: 0 auto; min-height: 40vh; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top:2rem;}
-    .content-card { background: var(--bg-white); border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); text-align:left;}
-    .content-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.4rem;}
+    body { font-family: 'Montserrat', sans-serif; }
   </style>
 </head>
-<body>
-<nav>
-  <a href="index.html" class="logo" style="gap: 0.8rem;">
-    <svg width="44" height="44" viewBox="0 0 24 24" fill="var(--accent-orange)" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-      <text x="12" y="15" fill="#ffffff" font-size="7" font-weight="900" font-family="Montserrat, sans-serif" text-anchor="middle" letter-spacing="1">ECC</text>
-    </svg>
-    <div style="display:flex; flex-direction:column; line-height: 1.1;">
-      <span style="color:#003a5d; font-weight:900; font-size:1.5rem; letter-spacing: 1px;">ECC</span>
-      <span style="color:var(--accent-orange); font-weight:400; font-size:1.15rem; text-transform:none;">hive</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">ABOUT US</a></li>
-    <li><a href="solutions.html">SOLUTIONS</a></li>
-    <li><a href="partner.html">PARTNER WITH US</a></li>
-    <li><a href="institutions.html">INSTITUTIONS</a></li>
-    <li><a href="news.html">IN THE NEWS &#9662;</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="get-started.html" class="nav-cta rounded-pill">GET STARTED</a></li>
-    <li><a href="login.html" class="nav-login"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login</a></li>
-  </ul>
-</nav>
-  <header class="page-hero">
-    <h1>Comprehensive EdTech Solutions</h1>
-    <p>Tailored platforms & services for students, recruitment partners, and universities.</p>
-  </header>
-  
-  <section class="content-section">
-    <div class='card-grid'><div class='content-card'><h3>For Students</h3><p>Course search wizards, scholarship matching, visa guidance, and a personalized portal to track your application journey from start to finish.</p></div><div class='content-card'><h3>For Institutions</h3><p>Reach a diverse, pre-screened global applicant pool. Direct integration with your admissions systems and verified document management.</p></div><div class='content-card'><h3>For Partners</h3><p>A B2B portal offering robust CRM tools, application tracking, commission transparent modules, and marketing collateral repository.</p></div></div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 ECC Hive. All Rights Reserved.</p>
-  </footer>
+<body class="bg-white text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-[100] border-b border-white/10 bg-white/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-2" style="height:64px;min-height:64px;">
+    
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="images/ECC Hive Logo.png" 
+           alt="ECC Hive logo" 
+           onerror="this.src='images/logo.png'" 
+           class="h-[110px] w-auto " />
+    </a>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <ul class="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-600">
+        <li><a href="about.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">ABOUT</a></li>
+        <li><a href="solutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">SOLUTIONS</a></li>
+        <li><a href="partner.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">PARTNER</a></li>
+        <li><a href="institutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">INSTITUTIONS</a></li>
+        <li><a href="faq.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">FAQ</a></li>
+      </ul>
+
+      <div class="ml-5 flex items-center gap-3 border-l border-slate-200 pl-5">
+        <a href="login.html" 
+           class="rounded-full border border-slate-300 px-4 py-1.5 text-sm font-semibold text-slate-700 hover:border-orange-500 hover:text-orange-500">
+          LOGIN
+        </a>
+
+        <a href="get-started.html" 
+           class="rounded-full bg-slate-900 px-5 py-2 text-sm font-bold text-white shadow-md hover:bg-orange-500">
+          GET STARTED
+        </a>
+      </div>
+    </div>
+
+    <button class="flex rounded-lg p-2 text-slate-600 lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative bg-gradient-to-br from-slate-100 to-slate-50 py-32 text-center px-6 overflow-hidden">
+  
+  <div class="absolute inset-0 z-0 opacity-[0.11] pointer-events-none">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" 
+      alt="World Map" 
+      class="w-full h-full object-contain"
+    />
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-4xl">
+    <h1 class="text-3xl md:text-6xl font-black text-blue-950 mb-6 tracking-tight">
+      Comprehensive <span class="text-orange-600">EdTech</span> Solutions
+    </h1>
+    <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+      Tailored platforms & services for students, recruitment partners, and universities across the globe.
+    </p>
+    
+    <div class="mt-8 flex justify-center">
+      <div class="h-1.5 w-20 bg-orange-500 rounded-full"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- CARD -->
+      <div class="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">
+          For Students
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Course search wizards, scholarship matching, visa guidance, and a personalized portal to track your application journey.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">
+          For Institutions
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Reach a diverse, pre-screened global applicant pool with direct integration and verified document management.
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">
+          For Partners
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          A B2B portal offering CRM tools, tracking systems, transparent commissions, and marketing resources.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-slate-50 overflow-hidden">
+  <div class="mx-auto max-w-7xl">
+    
+    <div class="max-w-3xl mb-20">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 mb-6">
+        <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-orange-700">ECC Hive Solutions</span>
+      </div>
+      <h2 class="text-4xl md:text-6xl font-black text-slate-950 tracking-tight leading-[1.1]">
+        Comprehensive <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">Study Abroad</span> Services
+      </h2>
+      <p class="mt-8 text-lg md:text-xl text-slate-600 leading-relaxed font-medium">
+        From the first spark of interest to your first day in a new country, we provide a vast array of solutions tailored for every step of your international education journey.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-3 mb-16">
+      
+      <div class="group bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-6">Discovery & Strategy</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-orange-500">●</span> Career Counseling & Goal Alignment
+          </li>
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-orange-500">●</span> Selection of Country, Uni & Programs
+          </li>
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-orange-500">●</span> Pathway Program Planning
+          </li>
+        </ul>
+      </div>
+
+      <div class="group bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-6">Application & VISA</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-blue-500">●</span> End-to-End Application Assistance
+          </li>
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-blue-500">●</span> Expert VISA Assistance & Guidance
+          </li>
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-blue-500">●</span> Coaching for Cost Estimation
+          </li>
+        </ul>
+      </div>
+
+      <div class="group bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-6">Pre-Departure</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-indigo-500">●</span> Covering Essential Prerequisites
+          </li>
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-indigo-500">●</span> Specialized Pre-Departure Briefings
+          </li>
+          <li class="flex items-start gap-3 text-slate-600 text-sm font-medium">
+            <span class="mt-1 text-indigo-500">●</span> Arrival Readiness Guidance
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="relative bg-slate-900 rounded-[60px] p-8 md:p-20 overflow-hidden shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-600/20 rounded-full blur-[120px]"></div>
+      
+      <div class="relative z-10 grid lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
+        <div>
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Post Landing Support</h3>
+          <p class="text-slate-400 text-lg leading-relaxed font-medium">
+            We believe our job isn't done until you are settled. Our global network provides essential support once you arrive at your destination.
+          </p>
+          <div class="mt-8 h-1 w-20 bg-orange-500 rounded-full"></div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="bg-white/5 border border-white/10 p-5 rounded-3xl flex items-center gap-4 hover:bg-white/10 transition-all">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">01</span>
+            <span class="text-slate-200 text-sm font-bold">Internship Opportunities</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-3xl flex items-center gap-4 hover:bg-white/10 transition-all">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">02</span>
+            <span class="text-slate-200 text-sm font-bold">Mentoring & Networking</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-3xl flex items-center gap-4 hover:bg-white/10 transition-all">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">03</span>
+            <span class="text-slate-200 text-sm font-bold">Immigration Advice</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-3xl flex items-center gap-4 hover:bg-white/10 transition-all">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">04</span>
+            <span class="text-slate-200 text-sm font-bold">Banking Solutions</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-3xl flex items-center gap-4 hover:bg-white/10 transition-all">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">05</span>
+            <span class="text-slate-200 text-sm font-bold">Telecom & Insurance</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-3xl flex items-center gap-4 hover:bg-white/10 transition-all">
+            <span class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-xs font-bold">06</span>
+            <span class="text-slate-200 text-sm font-bold">Accommodation Help</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative py-24 px-6 bg-white overflow-hidden">
+  <div class="relative z-10 mx-auto max-w-7xl">
+    <div class="grid gap-16 lg:grid-cols-[1fr_1fr] items-center">
+      
+      <div class="space-y-8">
+        <div>
+          <span class="inline-block px-4 py-1.5 mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-orange-600 bg-orange-100 rounded-full">
+            Our Mission
+          </span>
+          <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] mb-6">
+            What <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">We Do</span>
+          </h2>
+          <p class="text-lg md:text-xl font-bold text-slate-700 italic border-l-4 border-orange-500 pl-6 py-2">
+            “We are rooted in the Past but with an eye towards the Future.”
+          </p>
+        </div>
+
+        <div class="space-y-6 text-slate-600 leading-relaxed text-base md:text-lg">
+          <p>
+            ECC Hive empowers international students by striking the right balance of leveraging <span class="font-bold text-slate-900">AI technology</span> and the essential <span class="font-bold text-slate-900">human connection</span> from our expert education counsellors.
+          </p>
+          
+          <p>
+            Through our revamped online portal, we provide access to a world-class education ecosystem. Our platform, <span class="text-orange-600 font-bold italic">Click To Connect</span>, is dedicated to cultivating a culture of excellence, helping "One Student At a Time" reach their full potential.
+          </p>
+
+          <div class="flex flex-wrap gap-3 py-4">
+            <span class="px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold text-slate-700 border border-slate-200">CANADA</span>
+            <span class="px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold text-slate-700 border border-slate-200">USA</span>
+            <span class="px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold text-slate-700 border border-slate-200">UK</span>
+            <span class="px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold text-slate-700 border border-slate-200">AUSTRALIA</span>
+            <span class="px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold text-slate-700 border border-slate-200">GERMANY</span>
+          </div>
+
+          <p class="font-semibold text-slate-800">
+            Become a part of the next generation of global leaders. Join us on a path to success and unlock your potential today!
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <a href="#" class="inline-flex items-center gap-3 px-10 py-4 bg-orange-600 text-white font-bold rounded-2xl shadow-xl shadow-orange-600/20 hover:bg-orange-700 hover:-translate-y-1 transition-all duration-300">
+            Get Assisted
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <img 
+          src="https://www.ecchive.com/wp-content/uploads/2022/12/ECC-HIve-Services.gif" 
+          alt="ECC Hive Process Diagram" 
+          class="w-full h-auto max-w-lg lg:max-w-xl object-contain border-none shadow-none"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-[#f8fafc]">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid gap-16 lg:grid-cols-[0.4fr_0.6fr] items-center">
+      
+      <div class="space-y-6 text-left">
+        <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+          Explore Study <br/>
+          <span class="text-orange-600 italic font-serif">Destinations</span>
+        </h2>
+        <p class="text-slate-500 text-base md:text-lg max-w-sm leading-relaxed">
+          To help you find your perfect destination, just browse by the countries here and find out more about what it's like to study and live there!
+        </p>
+        <div class="pt-4">
+          <a href="#" class="inline-flex items-center px-8 py-3 bg-[#1e3a8a] text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-lg">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-12">
+        
+        <div class="flex flex-wrap justify-center lg:justify-end gap-8 md:gap-12">
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-24 h-24 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/canada.svg" alt="Canada" class="w-12 h-12 md:w-16 md:h-16 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351332.png'" />
+            </div>
+            <span class="mt-4 text-sm font-bold text-slate-600 group-hover:text-orange-600">Canada</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-24 h-24 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/uk.svg" alt="UK" class="w-12 h-12 md:w-16 md:h-16 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351310.png'" />
+            </div>
+            <span class="mt-4 text-sm font-bold text-slate-600 group-hover:text-orange-600">UK</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-24 h-24 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/uae.svg" alt="UAE" class="w-12 h-12 md:w-16 md:h-16 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351350.png'" />
+            </div>
+            <span class="mt-4 text-sm font-bold text-slate-600 group-hover:text-orange-600">UAE</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-24 h-24 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/germany.svg" alt="Germany" class="w-12 h-12 md:w-16 md:h-16 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351320.png'" />
+            </div>
+            <span class="mt-4 text-sm font-bold text-slate-600 group-hover:text-orange-600">Germany</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center lg:justify-end gap-6 md:gap-10">
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/singapore.svg" alt="Singapore" class="w-10 h-10 md:w-14 md:h-14 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351341.png'" />
+            </div>
+            <span class="mt-3 text-xs md:text-sm font-bold text-slate-600 group-hover:text-orange-600">Singapore</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/usa.svg" alt="USA" class="w-10 h-10 md:w-14 md:h-14 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351336.png'" />
+            </div>
+            <span class="mt-3 text-xs md:text-sm font-bold text-slate-600 group-hover:text-orange-600">USA</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="https://imgs.search.brave.com/V987-SIy0pH0BfRPEq07VYqyizS9R-XUom7rE6jlXu8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzYzNTE2OC5naWY.jpeg" alt="Ireland" class="w-10 h-10 md:w-14 md:h-14 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351325.png'" />
+            </div>
+            <span class="mt-3 text-xs md:text-sm font-bold text-slate-600 group-hover:text-orange-600">Ireland</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/spain.svg" alt="Spain" class="w-10 h-10 md:w-14 md:h-14 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351321.png'" />
+            </div>
+            <span class="mt-3 text-xs md:text-sm font-bold text-slate-600 group-hover:text-orange-600">Spain</span>
+          </div>
+          <div class="flex flex-col items-center group cursor-pointer">
+            <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-md border border-slate-100 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
+              <img src="icons/malta.svg" alt="Malta" class="w-10 h-10 md:w-14 md:h-14 object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5351/5351326.png'" />
+            </div>
+            <span class="mt-3 text-xs md:text-sm font-bold text-slate-600 group-hover:text-orange-600">Malta</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#003a5d] text-slate-200">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:px-8">
+    <div class="space-y-5">
+      <h2 class="text-3xl font-black text-white">ECC<span class="text-accent">Hive</span></h2>
+      <p class="max-w-md text-sm leading-7 text-slate-400">Your trusted partner in international education. We make your global study dreams a reality.</p>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Destinations</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Study in Canada</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in UK</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in USA</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in Australia</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Services</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Course Search</a></li>
+        <li><a href="#" class="transition hover:text-white">Visa Assistance</a></li>
+        <li><a href="#" class="transition hover:text-white">Scholarships</a></li>
+        <li><a href="#" class="transition hover:text-white">Student Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact Us</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Find an Office</a></li>
+        <li><a href="#" class="transition hover:text-white">Book an Appointment</a></li>
+        <li><a href="#" class="transition hover:text-white">info@ecchive.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">© 2026 ECC Hive. All rights reserved.</div>
+</footer>
+
 </body>
 </html>
