@@ -3,76 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECC Hive â€“ FAQ</title>
+  <title>ECC Hive – FAQ</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary-blue: #003a5d;
-      --accent-orange: #ff7900;
-      --bg-white: #ffffff;
-      --bg-light: #f4f5f8;
-      --text-main: #333333;
-      --text-muted: #555555;
-      --border-color: #e0e0e0;
-      --font-main: 'Montserrat', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-main); background: var(--bg-white); color: var(--text-main); line-height: 1.6; }
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg-white); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .logo { font-weight: 800; font-size: 1.8rem; color: var(--primary-blue); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-    .logo span { color: var(--accent-orange); }
-    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; margin:0; padding:0; }
-    .nav-links li { display:inline-block; }
-    .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color 0.2s; letter-spacing:0.5px;}
-    .nav-links a:hover { color: var(--accent-orange); }
-    .nav-cta.rounded-pill { background: var(--accent-orange); color: var(--bg-white) !important; padding: 0.6rem 1.4rem; border-radius: 50px; text-transform:uppercase; transition: background 0.3s; }
-    .nav-cta.rounded-pill:hover { background: #e66a00; }
-    .nav-login { display:flex; align-items:center; gap:0.4rem; color: var(--accent-orange) !important; text-transform:uppercase; font-size: 0.85rem; font-weight:bold; text-decoration:none; }
-    footer { background: var(--primary-blue); color: var(--bg-white); text-align: center; padding: 3rem 5vw; margin-top: 5rem; }
-    .page-hero { background: linear-gradient(135deg, var(--bg-light) 0%, #eef2f5 100%); padding: 6rem 5vw 4rem; text-align: center; }
-    .page-hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--primary-blue); margin-bottom: 1rem; }
-    .page-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
-    .content-section { padding: 4rem 5vw; max-width: 1000px; margin: 0 auto; min-height: 40vh; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top:2rem;}
-    .content-card { background: var(--bg-white); border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); text-align:left;}
-    .content-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.4rem;}
+    body { font-family: 'Montserrat', sans-serif; }
   </style>
 </head>
-<body>
-<nav>
-  <a href="index.html" class="logo" style="gap: 0.8rem;">
-    <svg width="44" height="44" viewBox="0 0 24 24" fill="var(--accent-orange)" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-      <text x="12" y="15" fill="#ffffff" font-size="7" font-weight="900" font-family="Montserrat, sans-serif" text-anchor="middle" letter-spacing="1">ECC</text>
-    </svg>
-    <div style="display:flex; flex-direction:column; line-height: 1.1;">
-      <span style="color:#003a5d; font-weight:900; font-size:1.5rem; letter-spacing: 1px;">ECC</span>
-      <span style="color:var(--accent-orange); font-weight:400; font-size:1.15rem; text-transform:none;">hive</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">ABOUT US</a></li>
-    <li><a href="solutions.html">SOLUTIONS</a></li>
-    <li><a href="partner.html">PARTNER WITH US</a></li>
-    <li><a href="institutions.html">INSTITUTIONS</a></li>
-    <li><a href="news.html">IN THE NEWS &#9662;</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="get-started.html" class="nav-cta rounded-pill">GET STARTED</a></li>
-    <li><a href="login.html" class="nav-login"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login</a></li>
-  </ul>
-</nav>
-  <header class="page-hero">
-    <h1>Frequently Asked Questions</h1>
-    <p>Everything you need to know about starting your journey with us.</p>
-  </header>
-  
-  <section class="content-section">
-    <div class='card-grid'><div class='content-card'><h3>Is ECC Hive free for students?</h3><p>Yes, our basic counseling and application services are completely fee-free for aspiring students.</p></div><div class='content-card'><h3>How do I track my application?</h3><p>Once you register, you get access to a personalized dashboard updating your status in real-time.</p></div><div class='content-card'><h3>Do you guarantee visas?</h3><p>While we have a 98% success rate, visa issuance is solely at the discretion of the respective embassy or high commission.</p></div></div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 ECC Hive. All Rights Reserved.</p>
-  </footer>
+<body class="bg-white text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-[100] border-b border-white/10 bg-white/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-2" style="height:64px;min-height:64px;">
+    
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="images/ECC Hive Logo.png" 
+           alt="ECC Hive logo" 
+           onerror="this.src='images/logo.png'" 
+           class="h-[110px] w-auto " />
+    </a>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <ul class="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-600">
+        <li><a href="about.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">ABOUT</a></li>
+        <li><a href="solutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">SOLUTIONS</a></li>
+        <li><a href="partner.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">PARTNER</a></li>
+        <li><a href="institutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">INSTITUTIONS</a></li>
+        <li><a href="faq.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">FAQ</a></li>
+      </ul>
+
+      <div class="ml-5 flex items-center gap-3 border-l border-slate-200 pl-5">
+        <a href="login.html" 
+           class="rounded-full border border-slate-300 px-4 py-1.5 text-sm font-semibold text-slate-700 hover:border-orange-500 hover:text-orange-500">
+          LOGIN
+        </a>
+
+        <a href="get-started.html" 
+           class="rounded-full bg-slate-900 px-5 py-2 text-sm font-bold text-white shadow-md hover:bg-orange-500">
+          GET STARTED
+        </a>
+      </div>
+    </div>
+
+    <button class="flex rounded-lg p-2 text-slate-600 lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="bg-gradient-to-br from-slate-100 to-slate-50 py-20 text-center px-6">
+  <h1 class="text-3xl md:text-5xl font-extrabold text-blue-900 mb-4">
+    Frequently Asked Questions
+  </h1>
+  <p class="text-gray-600 max-w-xl mx-auto text-lg">
+    Everything you need to know about starting your journey with us.
+  </p>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="py-24 px-6 bg-[#f8fafc]">
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">How Can We Help?</h2>
+      
+      <div class="relative max-w-3xl mx-auto mb-10">
+        <input type="text" placeholder="Search for a question by keyword..." 
+               class="w-full pl-6 pr-32 py-5 bg-white border-none rounded-2xl shadow-xl shadow-slate-200/50 focus:ring-2 focus:ring-orange-500 transition-all text-slate-600 outline-none">
+        <button class="absolute right-2 top-2 bottom-2 bg-[#0a192f] text-white px-8 rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center gap-2">
+          <span>Search</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 mb-16">
+        <span class="text-slate-400 font-bold text-xs uppercase tracking-widest mr-4 self-center">Filter By:</span>
+        <button class="px-6 py-2 rounded-full bg-orange-500 text-white font-bold text-sm shadow-lg shadow-orange-500/30 transition-all">All</button>
+        <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-100 font-bold text-sm border border-slate-200 transition-all">General</button>
+        <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-100 font-bold text-sm border border-slate-200 transition-all">Finances/Cost</button>
+        <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-100 font-bold text-sm border border-slate-200 transition-all">Working in Canada</button>
+        <button class="px-6 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-100 font-bold text-sm border border-slate-200 transition-all">Immigration</button>
+      </div>
+    </div>
+
+    <div class="grid gap-6">
+      
+      <div class="group bg-white rounded-2xl border border-slate-100 p-1 shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex items-center justify-between p-5 md:px-8">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">
+              <span class="font-bold">01</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800">Is ECC Hive free for students?</h3>
+          </div>
+          <button class="text-slate-300 group-hover:text-orange-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+          </button>
+        </div>
+        <div class="px-8 pb-6 ml-14">
+          <p class="text-slate-500 leading-relaxed max-w-3xl">
+            Yes, our basic counseling and application services are completely fee-free for aspiring students. We believe in making global education accessible.
+          </p>
+        </div>
+      </div>
+
+      <div class="group bg-white rounded-2xl border border-slate-100 p-1 shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex items-center justify-between p-5 md:px-8">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">
+              <span class="font-bold">02</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800">How do I track my application?</h3>
+          </div>
+          <button class="text-slate-300 group-hover:text-orange-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="group bg-white rounded-2xl border border-slate-100 p-1 shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="flex items-center justify-between p-5 md:px-8">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-orange-50 group-hover:text-orange-600 transition-colors">
+              <span class="font-bold">03</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-800">Do you guarantee visas?</h3>
+          </div>
+          <button class="text-slate-300 group-hover:text-orange-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-slate-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col lg:flex-row gap-16 items-start">
+      
+      <div class="lg:w-1/3">
+        <div class="sticky top-10">
+          <span class="text-orange-600 font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Get Support</span>
+          <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+            Didn't find an answer to your <span class="text-orange-600">question?</span>
+          </h2>
+          <p class="text-slate-500 text-lg mb-10 leading-relaxed">
+            We are here to help! Please fill up this form and our expert counselor would contact you within 24 hours.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-orange-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Email Us</p>
+                <p class="text-slate-900 font-bold">support@ecchive.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:w-2/3 w-full">
+        <div class="bg-white rounded-[40px] p-8 md:p-12 shadow-2xl shadow-slate-200/60 border border-white relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-[100px] -z-0"></div>
+
+          <form action="#" class="relative z-10 space-y-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-700 ml-1">First Name <span class="text-orange-500">*</span></label>
+                <input type="text" placeholder="John" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-700 ml-1">Last Name <span class="text-orange-500">*</span></label>
+                <input type="text" placeholder="Doe" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-700 ml-1">Email Address <span class="text-orange-500">*</span></label>
+                <input type="email" placeholder="example@abc.com" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-700 ml-1">Phone Number <span class="text-orange-500">*</span></label>
+                <input type="tel" placeholder="(XXX) XXX-XXXX" class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all">
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-700 ml-1">Home Country</label>
+                <select class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all appearance-none cursor-pointer">
+                  <option>Choose Your Home Country</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-700 ml-1">Preferred Country of Study</label>
+                <select class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all appearance-none cursor-pointer">
+                  <option>Choose Desired Country</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-slate-700 ml-1">Message</label>
+              <textarea rows="4" placeholder="Let us know any questions you might have..." class="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all resize-none"></textarea>
+            </div>
+
+            <button class="w-full bg-[#0a192f] hover:bg-slate-800 text-white font-black py-5 rounded-2xl transition-all duration-300 transform hover:scale-[1.01] shadow-xl shadow-slate-200">
+              Get In Touch
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1e3a8a] text-slate-200">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:px-8">
+    <div class="space-y-5">
+      <h2 class="text-3xl font-black text-white">ECC<span class="text-accent">Hive</span></h2>
+      <p class="max-w-md text-sm leading-7 text-slate-400">Your trusted partner in international education. We make your global study dreams a reality.</p>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Destinations</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Study in Canada</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in UK</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in USA</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in Australia</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Services</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Course Search</a></li>
+        <li><a href="#" class="transition hover:text-white">Visa Assistance</a></li>
+        <li><a href="#" class="transition hover:text-white">Scholarships</a></li>
+        <li><a href="#" class="transition hover:text-white">Student Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact Us</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Find an Office</a></li>
+        <li><a href="#" class="transition hover:text-white">Book an Appointment</a></li>
+        <li><a href="#" class="transition hover:text-white">info@ecchive.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">© 2026 ECC Hive. All rights reserved.</div>
+</footer>
+
 </body>
 </html>
