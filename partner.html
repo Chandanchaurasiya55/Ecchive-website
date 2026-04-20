@@ -3,76 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECC Hive â€“ Partner With Us</title>
+  <title>ECC Hive – Partner With Us</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary-blue: #003a5d;
-      --accent-orange: #ff7900;
-      --bg-white: #ffffff;
-      --bg-light: #f4f5f8;
-      --text-main: #333333;
-      --text-muted: #555555;
-      --border-color: #e0e0e0;
-      --font-main: 'Montserrat', sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-main); background: var(--bg-white); color: var(--text-main); line-height: 1.6; }
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg-white); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .logo { font-weight: 800; font-size: 1.8rem; color: var(--primary-blue); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-    .logo span { color: var(--accent-orange); }
-    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; margin:0; padding:0; }
-    .nav-links li { display:inline-block; }
-    .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color 0.2s; letter-spacing:0.5px;}
-    .nav-links a:hover { color: var(--accent-orange); }
-    .nav-cta.rounded-pill { background: var(--accent-orange); color: var(--bg-white) !important; padding: 0.6rem 1.4rem; border-radius: 50px; text-transform:uppercase; transition: background 0.3s; }
-    .nav-cta.rounded-pill:hover { background: #e66a00; }
-    .nav-login { display:flex; align-items:center; gap:0.4rem; color: var(--accent-orange) !important; text-transform:uppercase; font-size: 0.85rem; font-weight:bold; text-decoration:none; }
-    footer { background: var(--primary-blue); color: var(--bg-white); text-align: center; padding: 3rem 5vw; margin-top: 5rem; }
-    .page-hero { background: linear-gradient(135deg, var(--bg-light) 0%, #eef2f5 100%); padding: 6rem 5vw 4rem; text-align: center; }
-    .page-hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--primary-blue); margin-bottom: 1rem; }
-    .page-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
-    .content-section { padding: 4rem 5vw; max-width: 1000px; margin: 0 auto; min-height: 40vh; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top:2rem;}
-    .content-card { background: var(--bg-white); border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); text-align:left;}
-    .content-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.4rem;}
+    body { font-family: 'Montserrat', sans-serif; }
   </style>
 </head>
-<body>
-<nav>
-  <a href="index.html" class="logo" style="gap: 0.8rem;">
-    <svg width="44" height="44" viewBox="0 0 24 24" fill="var(--accent-orange)" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-      <text x="12" y="15" fill="#ffffff" font-size="7" font-weight="900" font-family="Montserrat, sans-serif" text-anchor="middle" letter-spacing="1">ECC</text>
-    </svg>
-    <div style="display:flex; flex-direction:column; line-height: 1.1;">
-      <span style="color:#003a5d; font-weight:900; font-size:1.5rem; letter-spacing: 1px;">ECC</span>
-      <span style="color:var(--accent-orange); font-weight:400; font-size:1.15rem; text-transform:none;">hive</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">ABOUT US</a></li>
-    <li><a href="solutions.html">SOLUTIONS</a></li>
-    <li><a href="partner.html">PARTNER WITH US</a></li>
-    <li><a href="institutions.html">INSTITUTIONS</a></li>
-    <li><a href="news.html">IN THE NEWS &#9662;</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="get-started.html" class="nav-cta rounded-pill">GET STARTED</a></li>
-    <li><a href="login.html" class="nav-login"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login</a></li>
-  </ul>
-</nav>
-  <header class="page-hero">
-    <h1>Grow With ECC Hive</h1>
-    <p>Join our global network of top-tier recruitment partners and world-class universities.</p>
-  </header>
-  
-  <section class="content-section">
-    <div class='content-section' style='text-align:center;'><p style='font-size:1.2rem;'>ECC Hive manages the end-to-end recruitment lifecycle. Partnering with us gives you immediate scale, technological advantage, and trusted brand equity.</p><br><br><a href='get-started.html' class='nav-cta rounded-pill' style='display:inline-block; padding:1rem 2.5rem; font-size:1.1rem; text-decoration:none;'>Apply for Partnership</a></div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 ECC Hive. All Rights Reserved.</p>
-  </footer>
+<body class="bg-white text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-[100] border-b border-white/10 bg-white/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-2" style="height:64px;min-height:64px;">
+    
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="images/ECC Hive Logo.png" 
+           alt="ECC Hive logo" 
+           onerror="this.src='images/logo.png'" 
+           class="h-[110px] w-auto " />
+    </a>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <ul class="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-600">
+        <li><a href="about.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">ABOUT</a></li>
+        <li><a href="solutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">SOLUTIONS</a></li>
+        <li><a href="partner.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">PARTNER</a></li>
+        <li><a href="institutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">INSTITUTIONS</a></li>
+        <li><a href="faq.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">FAQ</a></li>
+      </ul>
+
+      <div class="ml-5 flex items-center gap-3 border-l border-slate-200 pl-5">
+        <a href="login.html" 
+           class="rounded-full border border-slate-300 px-4 py-1.5 text-sm font-semibold text-slate-700 hover:border-orange-500 hover:text-orange-500">
+          LOGIN
+        </a>
+
+        <a href="get-started.html" 
+           class="rounded-full bg-slate-900 px-5 py-2 text-sm font-bold text-white shadow-md hover:bg-orange-500">
+          GET STARTED
+        </a>
+      </div>
+    </div>
+
+    <button class="flex rounded-lg p-2 text-slate-600 lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative py-24 px-6 overflow-hidden text-center bg-[#0a192f]">
+  
+  <div class="absolute inset-0 z-0 opacity-50 brightness-105 pointer-events-none">
+    <img 
+      src="images/ECC Entrance.jpg" 
+      alt="ECC Entrance" 
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <div class="absolute inset-0 z-[1] bg-gradient-to-b from-[#0a192f]/70 via-[#0a192f]/30 to-[#0a192f]/70"></div>
+
+  <div class="relative z-10 mx-auto max-w-5xl">
+    
+    <span class="inline-block px-4 py-1.5 mb-6 text-[11px] font-bold uppercase tracking-[0.3em] text-orange-400 bg-orange-400/10 rounded-full border border-orange-400/20">
+      Global Network
+    </span>
+
+    <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
+      Grow With <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">ECC Hive</span>
+    </h1>
+
+    <p class="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+      Join our global network of top-tier recruitment partners and world-class universities.
+    </p>
+    
+    <div class="mt-10 flex justify-center">
+      <div class="h-1.5 w-20 bg-orange-600 rounded-full shadow-[0_0_20px_rgba(234,88,12,0.5)]"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto text-center">
+    
+    <div class="mb-10">
+      <span class="inline-block px-4 py-1.5 mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-orange-600 bg-orange-100 rounded-full">
+        Collaboration
+      </span>
+      <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+        Partner With Us
+      </h2>
+      <div class="h-1.5 w-20 bg-orange-500 mx-auto rounded-full mb-8"></div>
+    </div>
+
+    <div class="space-y-6 max-w-4xl mx-auto">
+      <p class="text-slate-600 text-lg md:text-xl leading-relaxed">
+        Partnering with us will provide you access to an impressive network of like-minded robust community of associates that share similar goals and values. 
+      </p>
+      
+      <p class="text-slate-500 text-base md:text-lg leading-relaxed italic">
+        Whether you are looking to increase your recognition, boost ambitious enrollment numbers, or make sure that your student body is as diverse and well-rounded as possible, our experienced team can help surpass your expectations. 
+      </p>
+      
+      <p class="text-slate-800 font-bold text-lg pt-2">
+        We will be with you every step of the way to ensure that you reach your goals.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <a href="#" class="inline-flex items-center gap-3 px-10 py-4 bg-orange-600 text-white font-bold rounded-2xl shadow-xl shadow-orange-600/20 hover:bg-orange-700 hover:-translate-y-1 transition-all duration-300">
+        <span>Partner with us</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-24 px-6 bg-slate-50">
+  <div class="mx-auto max-w-7xl">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+        So Many <span class="text-orange-600 italic font-serif">Advantages</span> For You
+      </h2>
+      <div class="mt-4 h-1.5 w-24 bg-orange-500 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 mb-24">
+      
+      <div class="group bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-start gap-6">
+        <div class="w-20 h-20 bg-orange-50 rounded-3xl flex-shrink-0 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-500">
+           <img src="https://cdn-icons-png.flaticon.com/512/3201/3201558.png" alt="Icon" class="w-10 h-10 group-hover:invert transition-all" />
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Access to top schools</h3>
+          <p class="text-slate-500 leading-relaxed">Top programs at the top schools in the most desirable destinations at your fingertips.</p>
+        </div>
+      </div>
+
+      <div class="group bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-start gap-6">
+        <div class="w-20 h-20 bg-blue-50 rounded-3xl flex-shrink-0 flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-500">
+           <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Icon" class="w-10 h-10 group-hover:invert transition-all" />
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Transparency</h3>
+          <p class="text-slate-500 leading-relaxed">We'll help you in every step of the way and help you prepare your documents for a seamless visa process.</p>
+        </div>
+      </div>
+
+      <div class="group bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-start gap-6">
+        <div class="w-20 h-20 bg-green-50 rounded-3xl flex-shrink-0 flex items-center justify-center group-hover:bg-green-600 transition-colors duration-500">
+           <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="Icon" class="w-10 h-10 group-hover:invert transition-all" />
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3 text-left">Get paid for referrals</h3>
+          <p class="text-slate-500 leading-relaxed text-left">Quick and reliable commissions so you get paid for your hard work.</p>
+          <a href="#" class="inline-block mt-3 text-orange-600 font-bold hover:underline">Learn More</a>
+        </div>
+      </div>
+
+      <div class="group bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-start gap-6">
+        <div class="w-20 h-20 bg-indigo-50 rounded-3xl flex-shrink-0 flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-500">
+           <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="Icon" class="w-10 h-10 group-hover:invert transition-all" />
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Local support</h3>
+          <p class="text-slate-500 leading-relaxed">Our international requirement experts are there to support you every step of the way.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-[50px] p-8 md:p-16 border border-slate-100 shadow-sm text-center overflow-hidden relative">
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-orange-50 rounded-full blur-3xl opacity-60"></div>
+      
+      <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Get In Touch</h3>
+      
+      <div class="max-w-4xl mx-auto space-y-6 text-slate-600 leading-relaxed">
+        <p>Recommending, referring potential students, and becoming a part of ECC family, bestows you the opportunity to take advantage of many resources that we offer.</p>
+        <p>As a Thank You to our valued partners, we make sure to provide great incentives for your time and recruitment efforts. Through connecting with us, your relationship with ECC can really help shape the future of countless students.</p>
+      </div>
+
+      <div class="mt-12 flex flex-col md:flex-row justify-center gap-6 md:gap-16">
+        <div class="space-y-2">
+          <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Inquiries</p>
+          <a href="mailto:inquiries@ecchive.com" class="text-xl font-bold text-orange-600 hover:text-orange-700 transition-colors">inquiries@ecchive.com</a>
+        </div>
+        <div class="space-y-2">
+          <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Admissions</p>
+          <a href="mailto:admission@ecchive.com" class="text-xl font-bold text-[#1e3a8a] hover:text-blue-900 transition-colors">admission@ecchive.com</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1e3a8a] text-slate-300">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:px-8">
+    <div class="space-y-5">
+      <h2 class="text-3xl font-black text-white">ECC<span class="text-accent">Hive</span></h2>
+      <p class="max-w-md text-sm leading-7 text-slate-400">Your trusted partner in international education. We make your global study dreams a reality.</p>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Destinations</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Study in Canada</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in UK</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in USA</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in Australia</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Services</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Course Search</a></li>
+        <li><a href="#" class="transition hover:text-white">Visa Assistance</a></li>
+        <li><a href="#" class="transition hover:text-white">Scholarships</a></li>
+        <li><a href="#" class="transition hover:text-white">Student Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact Us</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Find an Office</a></li>
+        <li><a href="#" class="transition hover:text-white">Book an Appointment</a></li>
+        <li><a href="#" class="transition hover:text-white">info@ecchive.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">© 2026 ECC Hive. All rights reserved.</div>
+</footer>
+
 </body>
 </html>
