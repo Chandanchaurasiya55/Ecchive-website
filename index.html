@@ -5,563 +5,371 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ECC Hive – Global Study Abroad Experts</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      /* IDP-inspired color palette for ECC Hive */
-      --primary-blue: #003a5d;   /* Deep Navy Blue */
-      --accent-orange: #ff7900;  /* vibrant orange like IDP */
-      --bg-white: #ffffff;
-      --bg-light: #f4f5f8;
-      --text-main: #333333;
-      --text-muted: #555555;
-      --border-color: #e0e0e0;
-      --font-main: 'Montserrat', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-main);
-      background: var(--bg-white);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    /* ---------- NAVBAR ---------- */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border-color);
-      display: flex; align-items: center; justify-content: flex-end;
-      padding: 1rem 5vw 1rem 12rem;
-      min-height: 4.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .logo {
-      position: absolute;
-      left: 5vw;
-      top: 50%;
-      transform: translateY(-50%);
-      font-weight: 800; font-size: 1.8rem;
-      color: var(--primary-blue);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 0.5rem;
-      z-index: 101;
-    }
-    .logo span { color: var(--accent-orange); }
-    nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; margin: 0; }
-    nav ul a {
-      color: var(--text-main); text-decoration: none;
-      font-size: 0.95rem; font-weight: 600;
-      transition: color 0.2s;
-    }
-    nav ul a:hover { color: var(--accent-orange); }
-    .nav-cta {
-      background: var(--accent-orange);
-      color: var(--bg-white) !important;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .nav-cta:hover { background: #e66a00; }
-    .logo img {
-      height: 120px;
-      width: auto;
-      display: block;
-    }
-
-    /* ---------- HERO (IDP WIZARD STYLE) ---------- */
-    .hero {
-      background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.15)), url("images/ECC SSR Team.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 8rem 5vw 10rem;
-      text-align: center;
-      position: relative;
-      color: #ffffff;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.92);
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      text-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    }
-    
-    /* Search Wizard */
-    .search-wizard {
-      background: var(--bg-white);
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .wiz-field {
-      flex: 1; min-width: 200px;
-      text-align: left;
-    }
-    .wiz-field label {
-      display: block; font-size: 0.8rem; font-weight: 700;
-      color: var(--text-muted); margin-bottom: 0.5rem;
-    }
-    .wiz-field select, .wiz-field input {
-      width: 100%; padding: 0.8rem;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 1rem; color: var(--text-main);
-    }
-    .wiz-btn {
-      background: var(--primary-blue);
-      color: var(--bg-white);
-      border: none;
-      padding: 0 2rem;
-      font-size: 1rem; font-weight: 700;
-      border-radius: 4px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s;
-      min-width: 150px;
-    }
-    .wiz-btn:hover { background: #002d4a; }
-
-    /* ---------- SECTIONS ---------- */
-    .section { padding: 5rem 5vw; max-width: 1200px; margin: 0 auto; }
-    .section-title {
-      font-size: 2.2rem; font-weight: 800; color: var(--primary-blue);
-      margin-bottom: 1rem; text-align: center;
-    }
-    .section-sub {
-      text-align: center; color: var(--text-muted); font-size: 1.1rem;
-      margin-bottom: 3rem; max-width: 600px; margin-inline: auto;
-    }
-
-    /* ---------- DESTINATIONS ---------- */
-    .dest-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .dest-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .dest-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
-      border-color: var(--accent-orange);
-    }
-    .dest-img-placeholder {
-      height: 150px;
-      background: #e0e6ed;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3rem;
-    }
-    .dest-info { padding: 1.5rem; text-align: center; }
-    .dest-info h3 { font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 0.5rem; }
-    .dest-info p { font-size: 0.9rem; color: var(--text-muted); }
-
-    /* ---------- HOW IT WORKS (SERVICES) ---------- */
-    .bg-light-section { background: var(--bg-light); }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .step-card {
-      background: var(--bg-white);
-      padding: 2.5rem;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    }
-    .step-icon {
-      width: 70px; height: 70px;
-      background: rgba(255, 121, 0, 0.1);
-      color: var(--accent-orange);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem; margin: 0 auto 1.5rem;
-    }
-    .step-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.2rem;}
-    .step-card p { font-size: 0.95rem; color: var(--text-muted); }
-
-    /* ---------- TEAM HERO SECTION ---------- */
-    .team-hero {
-      padding: 6rem 5vw;
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .team-hero-left h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      color: var(--primary-blue);
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
-    }
-    .team-hero-left p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-    .team-hero-left .highlight {
-      color: var(--primary-blue);
-      font-weight: 700;
-    }
-    .learn-more-btn {
-      display: inline-block;
-      background: var(--primary-blue);
-      color: var(--bg-white);
-      padding: 1rem 2.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: background 0.3s, transform 0.2s;
-      margin-top: 1.5rem;
-      border: none;
-      cursor: pointer;
-    }
-    .learn-more-btn:hover {
-      background: #002d4a;
-      transform: translateY(-2px);
-    }
-    .team-hero-right {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 420px;
-      padding: 2rem;
-    }
-    .team-hero-right::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 95%;
-      height: 95%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle at 20% 30%, rgba(0, 68, 118, 0.18), transparent 28%),
-                  radial-gradient(circle at 80% 20%, rgba(255, 121, 0, 0.18), transparent 24%),
-                  radial-gradient(circle at 50% 80%, rgba(0, 58, 93, 0.08), transparent 30%);
-      border-radius: 50% 45% 60% 50% / 60% 70% 40% 45%;
-      filter: blur(24px);
-      z-index: 1;
-    }
-    .team-hero-visual {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .team-hive-title {
-      font-size: clamp(3rem, 5vw, 4.8rem);
-      font-weight: 800;
-      margin-bottom: 2rem;
-      color: var(--primary-blue);
-      letter-spacing: -0.05em;
-    }
-    .team-hive-title span {
-      color: var(--accent-orange);
-    }
-    .team-image-container {
-      width: 100%;
-      max-width: 780px;
-      margin: 0 auto;
-      border-radius: 36px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
-      background: rgba(255,255,255,0.95);
-      border: 1px solid rgba(255,255,255,0.8);
-    }
-    .team-image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    @media (max-width: 1024px) {
-      .team-hero {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .team-hero-right {
-        min-height: auto;
-        padding: 0;
-      }
-      .team-hero-visual {
-        max-width: 100%;
-      }
-      .team-image-container {
-        max-width: 100%;
-      }
-    }
-
-    /* ---------- OUR EXPERTS ---------- */
-    .team-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
-      justify-content: center;
-    }
-    .team-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .team-img { width: 100%; height: 350px; object-fit: cover; object-position: top; }
-    .team-info { padding: 1.5rem; }
-    .team-name { font-size: 1.25rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.3rem;}
-    .team-role { font-size: 0.9rem; font-weight: 600; color: var(--accent-orange); }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: var(--primary-blue);
-      color: var(--bg-white);
-      padding: 4rem 5vw 2rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem; max-width: 1200px; margin: 0 auto 3rem;
-    }
-    .footer-brand h2 { color: var(--bg-white); margin-bottom: 1rem; }
-    .footer-brand span { color: var(--accent-orange); }
-    .footer-brand p { color: #a4b3bf; font-size: 0.9rem; max-width: 300px; }
-    .footer-links h4 { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--bg-white); }
-    .footer-links ul { list-style: none; }
-    .footer-links li { margin-bottom: 0.8rem; }
-    .footer-links a { color: #a4b3bf; text-decoration: none; font-size: 0.95rem; transition: color 0.2s;}
-    .footer-links a:hover { color: var(--accent-orange); }
-    .footer-bottom {
-      text-align: center; padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #a4b3bf; font-size: 0.85rem;
-    }
-
-    @media (max-width: 768px) {
-      nav ul { display: none; }
-      .search-wizard { flex-direction: column; }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-      /* New Navbar Styles */
-    nav { padding: 0.8rem 5vw; }
-    .nav-links { display: flex; align-items: center; gap: 2.2rem; margin-left: auto; }
-    .nav-links > li > a { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.8px; font-weight: 600; color: var(--text-main); }
-    .nav-links > li > a:hover { color: var(--accent-orange); }
-    .nav-cta.rounded-pill { border-radius: 50px !important; padding: 0.8rem 1.8rem !important; font-size: 0.85rem !important; font-weight: 700 !important; margin-right: 0.5rem; color: #fff !important;}
-    .nav-login { color: var(--accent-orange) !important; text-transform: none !important; font-size: 1rem !important; display: flex; align-items: center; gap: 0.5rem; font-weight: 700 !important; padding-left: 1rem; }
-    .nav-login:hover { color: #e66a00 !important; }
-    @media (max-width: 1200px) { .nav-links { gap: 1rem; } .nav-links > li > a { font-size: 0.7rem; } }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            primary: '#003a5d',
+            accent: '#ff7900',
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
+<body class="font-sans bg-slate-50 text-slate-900">
 
-<nav>
-  <a href="index.html" class="logo" style="gap: 0.8rem; align-items: center;">
-    <img src="images/ECC Hive Logo.png" alt="ECC Hive logo" onerror="this.src='images/logo.png'" />
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">ABOUT US</a></li>
-    <li><a href="solutions.html">SOLUTIONS</a></li>
-    <li><a href="partner.html">PARTNER WITH US</a></li>
-    <li><a href="institutions.html">INSTITUTIONS</a></li>
-    <li><a href="news.html">IN THE NEWS &#9662;</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="get-started.html" class="nav-cta rounded-pill">GET STARTED</a></li>
-    <li><a href="login.html" class="nav-login"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login</a></li>
-  </ul>
+<nav class="sticky top-0 z-[100] border-b border-white/10 bg-white/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-2" style="height:64px;min-height:64px;">
+    
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="images/ECC Hive Logo.png" 
+           alt="ECC Hive logo" 
+           onerror="this.src='images/logo.png'" 
+           class="h-[110px] w-auto " />
+    </a>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <ul class="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-600">
+        <li><a href="about.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">ABOUT</a></li>
+        <li><a href="solutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">SOLUTIONS</a></li>
+        <li><a href="partner.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">PARTNER</a></li>
+        <li><a href="institutions.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">INSTITUTIONS</a></li>
+        <li><a href="faq.html" class="px-3 py-1.5 rounded-full hover:bg-slate-100 hover:text-orange-500">FAQ</a></li>
+      </ul>
+
+      <div class="ml-5 flex items-center gap-3 border-l border-slate-200 pl-5">
+        <a href="login.html" 
+           class="rounded-full border border-slate-300 px-4 py-1.5 text-sm font-semibold text-slate-700 hover:border-orange-500 hover:text-orange-500">
+          LOGIN
+        </a>
+
+        <a href="get-started.html" 
+           class="rounded-full bg-slate-900 px-5 py-2 text-sm font-bold text-white shadow-md hover:bg-orange-500">
+          GET STARTED
+        </a>
+      </div>
+    </div>
+
+    <button class="flex rounded-lg p-2 text-slate-600 lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+  </div>
 </nav>
 
-<header class="hero">
-  <h1>Your global study journey starts here</h1>
-  <p>Discover courses, universities, and expert guidance to help you study abroad and achieve your dreams, just like thousands of students worldwide.</p>
-  
-  <div class="search-wizard">
-    <div class="wiz-field">
-      <label>Where do you want to study?</label>
-      <select>
-        <option>Select a country</option>
-        <option>Canada</option>
-        <option>United Kingdom</option>
-        <option>United States</option>
-        <option>Australia</option>
-        <option>Ireland</option>
-      </select>
+<header class="relative top-0 w-full overflow-hidden bg-slate-950 font-sans mt-0" style="min-height:calc(100vh - 64px)">
+  <div class="absolute inset-0">
+    <img src="images/ECC SSR Team.jpg" alt="Team" class="h-full w-full object-cover opacity-60" />
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/60 to-transparent"></div>
+  </div>
+
+  <div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-orange-600/20 blur-[120px]"></div>
+  <div class="absolute bottom-1/4 right-0 h-64 w-64 rounded-full bg-blue-600/10 blur-[100px]"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20 lg:px-8">
+    <div class="flex flex-col items-center text-center">
+      <div class="group mb-8 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1 pr-4 transition-all hover:bg-white/10">
+        <span class="rounded-full bg-orange-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">New</span>
+        <span class="text-sm font-medium text-slate-300">Over 500+ Universities added for 2026</span>
+      </div>
+
+      <h1 class="max-w-4xl text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
+        The smarter way to <span class="bg-gradient-to-r from-orange-400 to-rose-400 bg-clip-text text-transparent">Study Abroad.</span>
+      </h1>
+      <p class="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+        Your global education journey simplified. Access expert counseling, visa assistance, and a database of 50,000+ courses.
+      </p>
+
+      <div class="mt-16 w-full max-w-6xl">
+        <div class="relative rounded-[32px] border border-white/20 bg-white/10 p-3 shadow-2xl backdrop-blur-2xl lg:rounded-full">
+          <div class="flex flex-col items-stretch gap-2 md:flex-row md:items-center">
+            
+            <div class="relative flex-1 group/item">
+              <div class="flex flex-col px-6 py-3 text-left transition-all rounded-full hover:bg-white/5">
+                <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-400">Destination</label>
+                <div class="relative">
+                  <select class="w-full cursor-pointer bg-transparent py-1 text-lg font-semibold text-white outline-none appearance-none pr-8">
+                    <option class="text-slate-900">Select Country</option>
+                    <option class="text-slate-900">United Kingdom</option>
+                    <option class="text-slate-900">Canada</option>
+                    <option class="text-slate-900">Australia</option>
+                  </select>
+                  <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-white/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute right-0 top-1/2 hidden h-10 -translate-y-1/2 border-r border-white/10 md:block"></div>
+            </div>
+
+            <div class="relative flex-1 group/item">
+              <div class="flex flex-col px-6 py-3 text-left transition-all rounded-full hover:bg-white/5">
+                <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-400">Study Level</label>
+                <div class="relative">
+                  <select class="w-full cursor-pointer bg-transparent py-1 text-lg font-semibold text-white outline-none appearance-none pr-8">
+                    <option class="text-slate-900">Postgraduate</option>
+                    <option class="text-slate-900">Undergraduate</option>
+                    <option class="text-slate-900">Doctorate</option>
+                  </select>
+                  <div class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-white/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute right-0 top-1/2 hidden h-10 -translate-y-1/2 border-r border-white/10 md:block"></div>
+            </div>
+
+            <div class="flex-[1.5]">
+              <div class="flex flex-col px-6 py-3 text-left transition-all rounded-full hover:bg-white/5">
+                <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-400">Your Interest</label>
+                <input type="text" placeholder="e.g. Data Science" class="w-full bg-transparent py-1 text-lg font-semibold text-white placeholder-white/30 outline-none" />
+              </div>
+            </div>
+
+            <button class="flex h-16 items-center justify-center gap-3 rounded-full bg-orange-500 px-10 text-lg font-bold text-white shadow-lg shadow-orange-500/20 transition-all hover:scale-[1.02] hover:bg-orange-400 active:scale-95">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span>Search</span>
+            </button>
+            
+          </div>
+        </div>
+
+        <div class="mt-12 flex flex-wrap justify-center gap-10 opacity-80">
+          <div class="text-center md:text-left">
+            <p class="text-2xl font-bold text-white">15,000+</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Success Stories</p>
+          </div>
+          <div class="hidden h-10 border-r border-white/10 md:block"></div>
+          <div class="text-center md:text-left">
+            <p class="text-2xl font-bold text-white">98%</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Visa Approval</p>
+          </div>
+          <div class="hidden h-10 border-r border-white/10 md:block"></div>
+          <div class="text-center md:text-left">
+            <p class="text-2xl font-bold text-white">4.9/5</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Student Rating</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="wiz-field">
-      <label>What is your study level?</label>
-      <select>
-        <option>Select study level</option>
-        <option>Undergraduate</option>
-        <option>Postgraduate</option>
-        <option>Ph.D. / Doctorate</option>
-        <option>Diploma</option>
-      </select>
-    </div>
-    <div class="wiz-field">
-      <label>Course name or keywords</label>
-      <input type="text" placeholder="e.g. Business, IT, Nursing" />
-    </div>
-    <button class="wiz-btn">Search</button>
   </div>
 </header>
 
-<section class="section">
-  <h2 class="section-title">Popular Study Destinations</h2>
-  <p class="section-sub">Explore world-class education systems and diverse cultures.</p>
-  <div class="dest-grid">
-    <div class="dest-card">
-      <div class="dest-img-placeholder">🇨🇦</div>
-      <div class="dest-info">
-        <h3>Canada</h3>
-        <p>High-quality education & post-study work opportunities.</p>
-      </div>
+<section class="bg-slate-50 py-20 px-6 min-h-screen" style="min-height:calc(100vh - 64px);height:calc(100vh - 64px);">
+  <div class="mx-auto max-w-7xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">Popular Study Destinations</h2>
+      <p class="mt-4 text-base text-slate-600 sm:text-lg">Explore world-class education systems and diverse cultures.</p>
     </div>
-    <div class="dest-card">
-      <div class="dest-img-placeholder">🇬🇧</div>
-      <div class="dest-info">
-        <h3>United Kingdom</h3>
-        <p>Home to the world's oldest and most prestigious universities.</p>
-      </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-[28px] border border-slate-200 bg-white p-7 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 text-5xl">🇨🇦</div>
+        <h3 class="text-xl font-semibold text-slate-900">Canada</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">High-quality education & post-study work opportunities.</p>
+      </article>
+      <article class="rounded-[28px] border border-slate-200 bg-white p-7 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 text-5xl">🇬🇧</div>
+        <h3 class="text-xl font-semibold text-slate-900">United Kingdom</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Home to the world's oldest and most prestigious universities.</p>
+      </article>
+      <article class="rounded-[28px] border border-slate-200 bg-white p-7 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 text-5xl">🇺🇸</div>
+        <h3 class="text-xl font-semibold text-slate-900">United States</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">The largest education hub with unparalleled campus life.</p>
+      </article>
+      <article class="rounded-[28px] border border-slate-200 bg-white p-7 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 text-5xl">🇦🇺</div>
+        <h3 class="text-xl font-semibold text-slate-900">Australia</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-600">Top-ranked institutes with an incredible lifestyle.</p>
+      </article>
     </div>
-    <div class="dest-card">
-      <div class="dest-img-placeholder">🇺🇸</div>
-      <div class="dest-info">
-        <h3>United States</h3>
-        <p>The largest education hub with unparalleled campus life.</p>
-      </div>
+  </div>
+</section>
+
+<section class="bg-slate-50 py-20 px-6">
+  <div class="mx-auto max-w-7xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">How ECC Hive Helps You</h2>
+      <p class="mt-4 text-base text-slate-600 sm:text-lg">From finding the right course to securing your visa, our global experts are with you at every step.</p>
     </div>
-    <div class="dest-card">
-      <div class="dest-img-placeholder">🇦🇺</div>
-      <div class="dest-info">
-        <h3>Australia</h3>
-        <p>Top-ranked institutes with an incredible lifestyle.</p>
+    <div class="mt-12 grid gap-6 lg:grid-cols-3">
+      <div class="rounded-[28px] bg-white p-8 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-3xl">🎯</div>
+        <h3 class="text-xl font-semibold text-slate-900">Course Advice</h3>
+        <p class="mt-4 text-sm leading-7 text-slate-600">We match your academic profile, goals, and budget to the perfect university and course tailored just for you.</p>
+      </div>
+      <div class="rounded-[28px] bg-white p-8 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-3xl">📝</div>
+        <h3 class="text-xl font-semibold text-slate-900">Application Assistance</h3>
+        <p class="mt-4 text-sm leading-7 text-slate-600">We handle your application process end-to-end, helping with SOPs, resumes, and strict university deadlines.</p>
+      </div>
+      <div class="rounded-[28px] bg-white p-8 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-3xl">✈️</div>
+        <h3 class="text-xl font-semibold text-slate-900">Visa Support</h3>
+        <p class="mt-4 text-sm leading-7 text-slate-600">Our experienced visa counsellors guide you through documentation and interviews for a seamless visa approval.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-light-section">
-  <h2 class="section-title">How ECC Hive Helps You</h2>
-  <p class="section-sub">From finding the right course to securing your visa, our global experts are with you at every step.</p>
-  <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-icon">🎯</div>
-      <h3>Course Advice</h3>
-      <p>We match your academic profile, goals, and budget to the perfect university and course tailored just for you.</p>
+<section class="relative bg-white py-24 px-6 md:px-12 overflow-hidden flex items-center min-h-[650px]">
+
+  <!-- BIG FADED TEXT -->
+  <div class="absolute inset-0 z-0 pointer-events-none flex items-center">
+    <h1 class="text-[320px] font-black text-slate-100 -ml-24 tracking-tight italic">
+      HIVE
+    </h1>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 items-center gap-16">
+
+    <!-- LEFT -->
+    <div class="space-y-6">
+      <h1 class="text-[48px] md:text-[56px] font-extrabold leading-[1.1] text-[#2D3134]">
+        <span class="text-[#2563EB]">A Diverse</span> Team <br>
+        Dedicated To Helping <br>
+        <span class="text-[#F59E0B]">You</span> Achieve Your Goals
+      </h1>
+
+      <p class="text-gray-500 text-lg max-w-md leading-relaxed">
+        ECC Hive is your trusted partner for global education success. 
+        Our team works 24/7 to guide you toward your dream career.
+      </p>
+
+      <button class="group inline-flex items-center gap-2 px-8 py-3.5 bg-[#2D3134] text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition">
+        Learn More
+        <span class="transition-transform group-hover:translate-x-1">→</span>
+      </button>
     </div>
-    <div class="step-card">
-      <div class="step-icon">📝</div>
-      <h3>Application Assistance</h3>
-      <p>We handle your application process end-to-end, helping with SOPs, resumes, and strict university deadlines.</p>
+
+    <!-- RIGHT -->
+    <div class="relative flex items-center justify-center py-20">
+
+      <!-- SOFT PREMIUM GLOW -->
+      <div class="absolute w-[500px] h-[500px] bg-gradient-to-r from-blue-400/20 via-transparent to-orange-300/20 blur-[120px] rounded-full"></div>
+
+      <div class="relative w-full max-w-[520px] aspect-[4/3]">
+
+        <!-- BACK LAYER -->
+        <div class="absolute inset-0 translate-x-6 translate-y-10 rotate-[6deg] bg-white/30 backdrop-blur-xl rounded-[36px] border border-white/40 shadow-xl"></div>
+
+        <!-- MID GLOW LAYER -->
+        <div class="absolute inset-0 translate-x-3 translate-y-5 rotate-[3deg] bg-gradient-to-br from-blue-400/20 via-orange-300/20 to-purple-400/20 rounded-[36px] blur-sm"></div>
+
+        <!-- MAIN CARD -->
+        <div class="relative w-full h-full bg-white rounded-[36px] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.12)] overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
+
+          <div class="relative h-full w-full rounded-[28px] overflow-hidden">
+
+            <!-- BACKGROUND TEXTURE -->
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/watercolor.png')] opacity-10"></div>
+
+            <!-- GRADIENT -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-100/40 via-white to-orange-100/40"></div>
+
+            <!-- TEXT (FIXED TOP) -->
+            <div class="absolute top-6 left-0 w-full text-center z-20">
+              <h2 class="text-[44px] md:text-[50px] font-black italic tracking-tight">
+                <span class="text-[#1E3A8A] drop-shadow-md">Let's </span>
+                <span class="text-[#F59E0B] drop-shadow-md">Hive!</span>
+              </h2>
+            </div>
+
+            <!-- IMAGE (BOTTOM FIX) -->
+            <img 
+              src="images/ECC SSR Team.jpg" 
+              alt="Team" 
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[88%] h-auto z-10 drop-shadow-2xl"
+              onerror="this.src='https://i.ibb.co/V9Xm8yY/team-placeholder.png'"
+            />
+
+          </div>
+
+          <!-- BORDER GLOW -->
+          <div class="absolute inset-0 rounded-[36px] border-[4px] border-transparent bg-gradient-to-br from-blue-400/30 via-transparent to-orange-400/30 pointer-events-none"></div>
+
+        </div>
+
+      </div>
+
     </div>
-    <div class="step-card">
-      <div class="step-icon">✈️</div>
-      <h3>Visa Support</h3>
-      <p>Our experienced visa counsellors guide you through documentation and interviews for a seamless visa approval.</p>
+
+  </div>
+</section>
+
+<section class="py-20 px-6">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-10 text-center">
+      <p class="text-base font-semibold uppercase tracking-[0.25em] text-orange-500">Our counsellors</p>
+      <p class="mt-4 text-lg text-slate-600">Speak to our dedicated counsellors to kickstart your journey.</p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2">
+      <article class="overflow-hidden rounded-[32px] bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <img src="images/Omosomi Ogedengbe.jfif" alt="Omosomi Ogedengbe" class="h-80 w-full object-cover" onerror="this.src='https://via.placeholder.com/700x560?text=Omosomi'" />
+        <div class="space-y-2 p-6 text-center">
+          <h3 class="text-xl font-semibold text-slate-900">Omosomi Ogedengbe</h3>
+          <p class="text-sm font-medium uppercase tracking-[0.18em] text-orange-500">Head of Admissions</p>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-[32px] bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <img src="images/Sandeep Singh.jfif" alt="Sandeep Singh" class="h-80 w-full object-cover" onerror="this.src='https://via.placeholder.com/700x560?text=Sandeep'" />
+        <div class="space-y-2 p-6 text-center">
+          <h3 class="text-xl font-semibold text-slate-900">Sandeep Singh</h3>
+          <p class="text-sm font-medium uppercase tracking-[0.18em] text-orange-500">Senior Consultant</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="team-hero">
-  <div class="team-hero-left">
-    <h2>A Diverse Team Dedicated To Helping You Achieve Your Goals.</h2>
-    <p><span class="highlight">ECC Hive – Education Consultant Partner</span> Your Trusted Partner for Global Education Success. A global team dedicated around the clock to help you achieve your goals.</p>
-    <button class="learn-more-btn" onclick="document.querySelector('.team-hero-visual').scrollIntoView({behavior: 'smooth'});">Learn More</button>
-  </div>
-  
-  <div class="team-hero-right">
-    <div class="team-hero-visual">
-      <div class="team-hive-title">Let's <span>Hive</span>!</div>
-      <div class="team-image-container">
-        <img src="images/ECC SSR Team.jpg" alt="ECC Hive Team" onerror="this.src='images/Team Image 1.jpg'">
-      </div>
+<footer class="bg-slate-950 text-slate-200">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:px-8">
+    <div class="space-y-5">
+      <h2 class="text-3xl font-black text-white">ECC<span class="text-accent">Hive</span></h2>
+      <p class="max-w-md text-sm leading-7 text-slate-400">Your trusted partner in international education. We make your global study dreams a reality.</p>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <p class="section-sub">Speak to our dedicated counsellors to kickstart your journey.</p>
-  <div class="team-grid">
-    <div class="team-card">
-      <img src="images/Omosomi Ogedengbe.jfif" alt="Omosomi Ogedengbe" class="team-img" onerror="this.src='https://via.placeholder.com/300x350?text=Omosomi'">
-      <div class="team-info">
-        <div class="team-name">Omosomi Ogedengbe</div>
-        <div class="team-role">Head of Admissions</div>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="images/Sandeep Singh.jfif" alt="Sandeep Singh" class="team-img" onerror="this.src='https://via.placeholder.com/300x350?text=Sandeep'">
-      <div class="team-info">
-        <div class="team-name">Sandeep Singh</div>
-        <div class="team-role">Senior Consultant</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h2>ECC<span>Hive</span></h2>
-      <p>Your trusted partner in international education. We make your global study dreams a reality.</p>
-    </div>
-    <div class="footer-links">
-      <h4>Destinations</h4>
-      <ul>
-        <li><a href="#">Study in Canada</a></li>
-        <li><a href="#">Study in UK</a></li>
-        <li><a href="#">Study in USA</a></li>
-        <li><a href="#">Study in Australia</a></li>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Destinations</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Study in Canada</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in UK</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in USA</a></li>
+        <li><a href="#" class="transition hover:text-white">Study in Australia</a></li>
       </ul>
     </div>
-    <div class="footer-links">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">Course Search</a></li>
-        <li><a href="#">Visa Assistance</a></li>
-        <li><a href="#">Scholarships</a></li>
-        <li><a href="#">Student Events</a></li>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Services</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Course Search</a></li>
+        <li><a href="#" class="transition hover:text-white">Visa Assistance</a></li>
+        <li><a href="#" class="transition hover:text-white">Scholarships</a></li>
+        <li><a href="#" class="transition hover:text-white">Student Events</a></li>
       </ul>
     </div>
-    <div class="footer-links">
-      <h4>Contact Us</h4>
-      <ul>
-        <li><a href="#">Find an Office</a></li>
-        <li><a href="#">Book an Appointment</a></li>
-        <li><a href="#">info@ecchive.com</a></li>
+    <div>
+      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact Us</h4>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li><a href="#" class="transition hover:text-white">Find an Office</a></li>
+        <li><a href="#" class="transition hover:text-white">Book an Appointment</a></li>
+        <li><a href="#" class="transition hover:text-white">info@ecchive.com</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 ECC Hive. All rights reserved.</p>
-  </div>
+  <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">© 2026 ECC Hive. All rights reserved.</div>
 </footer>
 
 </body>
