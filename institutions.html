@@ -389,40 +389,104 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#1e3a8a] text-slate-200">
-  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:px-8">
-    <div class="space-y-5">
-      <h2 class="text-3xl font-black text-white">ECC<span class="text-accent">Hive</span></h2>
-      <p class="max-w-md text-sm leading-7 text-slate-400">Your trusted partner in international education. We make your global study dreams a reality.</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<footer class="relative overflow-hidden bg-[#020617] py-20 text-slate-300 font-sans">
+  
+  <div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px] animate-pulse"></div>
+  <div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-indigo-500/10 blur-[120px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
+      
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-4xl font-black tracking-tighter text-white">
+            ECC<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">Hive</span>
+          </h2>
+          <div class="mt-4 h-1.5 w-16 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 shadow-[0_0_15px_#3b82f6]"></div>
+        </div>
+        <p class="max-w-xs text-lg leading-relaxed text-slate-400">
+          Your trusted partner in <span class="text-white font-medium">international education</span>. We turn global study dreams into reality.
+        </p>
+        
+        <div class="flex gap-4">
+          <a href="#" class="group flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all hover:scale-110 hover:border-[#1877F2]/50 hover:bg-[#1877F2]">
+             <i class="fa-brands fa-facebook-f text-xl text-slate-400 group-hover:text-white"></i>
+          </a>
+          <a href="#" class="group flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all hover:scale-110 hover:border-pink-500/50 hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7]">
+             <i class="fa-brands fa-instagram text-xl text-slate-400 group-hover:text-white"></i>
+          </a>
+          <a href="#" class="group flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all hover:scale-110 hover:border-[#0077B5]/50 hover:bg-[#0077B5]">
+             <i class="fa-brands fa-linkedin-in text-xl text-slate-400 group-hover:text-white"></i>
+          </a>
+          <a href="#" class="group flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all hover:scale-110 hover:border-[#25D366]/50 hover:bg-[#25D366]">
+             <i class="fa-brands fa-whatsapp text-xl text-slate-400 group-hover:text-white"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-blue-400">Destinations</h4>
+        <ul class="space-y-4">
+          <li><a href="#" class="group flex items-center text-slate-400 transition hover:text-white hover:translate-x-1">
+            <span class="mr-2 h-px w-0 bg-blue-500 transition-all group-hover:w-4"></span>Study in Canada</a>
+          </li>
+          <li><a href="#" class="group flex items-center text-slate-400 transition hover:text-white hover:translate-x-1">
+            <span class="mr-2 h-px w-0 bg-blue-500 transition-all group-hover:w-4"></span>Study in UK</a>
+          </li>
+          <li><a href="#" class="group flex items-center text-slate-400 transition hover:text-white hover:translate-x-1">
+            <span class="mr-2 h-px w-0 bg-blue-500 transition-all group-hover:w-4"></span>Study in USA</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="space-y-6">
+        <h4 class="text-sm font-bold uppercase tracking-[0.2em] text-blue-400">Quick Help</h4>
+        <ul class="space-y-4">
+          <li><a href="#" class="group flex items-center text-slate-400 transition hover:text-white hover:translate-x-1">
+            <span class="mr-2 h-px w-0 bg-cyan-400 transition-all group-hover:w-4"></span>Scholarships</a>
+          </li>
+          <li><a href="#" class="group flex items-center text-slate-400 transition hover:text-white hover:translate-x-1">
+            <span class="mr-2 h-px w-0 bg-cyan-400 transition-all group-hover:w-4"></span>Visa Guide</a>
+          </li>
+          <li><a href="#" class="group flex items-center text-slate-400 transition hover:text-white hover:translate-x-1">
+            <span class="mr-2 h-px w-0 bg-cyan-400 transition-all group-hover:w-4"></span>Course Search</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="relative group">
+        <div class="absolute -inset-0.5 rounded-2xl transition duration-500"></div>
+        <div class="relative rounded-2xl bg-[#0f172a]/80 p-6 border border-white/10 backdrop-blur-md">
+          <h4 class="text-sm font-bold uppercase tracking-widest text-white mb-6">Contact Us</h4>
+          <div class="space-y-5">
+            <div class="flex items-center gap-4 group/item">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 group-hover/item:scale-110 transition-all">
+                <i class="fa-regular fa-envelope text-lg"></i>
+              </div>
+              <span class="text-sm font-medium">info@ecchive.com</span>
+            </div>
+            
+            <a href="#" class="block w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 font-bold text-white shadow-lg shadow-blue-900/20 transition-all hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Destinations</h4>
-      <ul class="space-y-3 text-sm text-slate-300">
-        <li><a href="#" class="transition hover:text-white">Study in Canada</a></li>
-        <li><a href="#" class="transition hover:text-white">Study in UK</a></li>
-        <li><a href="#" class="transition hover:text-white">Study in USA</a></li>
-        <li><a href="#" class="transition hover:text-white">Study in Australia</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Services</h4>
-      <ul class="space-y-3 text-sm text-slate-300">
-        <li><a href="#" class="transition hover:text-white">Course Search</a></li>
-        <li><a href="#" class="transition hover:text-white">Visa Assistance</a></li>
-        <li><a href="#" class="transition hover:text-white">Scholarships</a></li>
-        <li><a href="#" class="transition hover:text-white">Student Events</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact Us</h4>
-      <ul class="space-y-3 text-sm text-slate-300">
-        <li><a href="#" class="transition hover:text-white">Find an Office</a></li>
-        <li><a href="#" class="transition hover:text-white">Book an Appointment</a></li>
-        <li><a href="#" class="transition hover:text-white">info@ecchive.com</a></li>
-      </ul>
+
+    <div class="mt-20 border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-xs text-slate-500 tracking-wide">
+        © 2026 <span class="text-white font-semibold">ECC Hive</span>. All Rights Reserved.
+      </p>
+      <div class="flex items-center gap-6 text-xs font-medium text-slate-500">
+        <a href="#" class="hover:text-blue-400 transition">Privacy Policy</a>
+        <span class="h-1 w-1 rounded-full bg-slate-700"></span>
+        <a href="#" class="hover:text-blue-400 transition">Terms of Service</a>
+      </div>
     </div>
   </div>
-  <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">© 2026 ECC Hive. All rights reserved.</div>
 </footer>
 
 </body>
